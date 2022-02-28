@@ -1,6 +1,7 @@
 2) 28-02-2022 @ 18:54 PM
    - Added a multiplier in levelling system so that when a user levels up, he has to send more msgs to reach next level.
    - Added `Rainbow Role` cmd which changes a roles colour evey 5 minutes using discord.ext.tasks
+   - Created timeline.lmao
 
 
 1) FORGOT :skull:
