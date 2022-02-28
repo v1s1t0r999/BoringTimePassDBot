@@ -1,2 +1,1 @@
-discord
-ShitDB
+worker: python bot.py
