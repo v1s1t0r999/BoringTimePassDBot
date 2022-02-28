@@ -5,6 +5,7 @@ import ShitDB
 import asyncio
 from discord.ext import commands, tasks
 from modules import global_variables as env
+import keep_alive
 
 
 
@@ -116,6 +117,6 @@ async def rainbow_task():
 
 
 
-
+keep_alive.keep_alive()
 bot.run(env.token)
 	
