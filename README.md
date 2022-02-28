@@ -1,4 +1,9 @@
-# Write it when ure bored or u a sussy gae!
+# Heroku Moment 
+<p>
+<a href="https://heroku.com/deploy?template=https://github.com/v1s1t0r999/BoringTimePassDBot/tree/heroku">
+  <img src="https://www.herokucdn.com/deploy/button.svg"  alt="Deploy">
+</a>
+</p>
 
 :skull: All PRs will be merged with literally no checks or shit (ofc I'll see if its a haywiring any other code!)
 
