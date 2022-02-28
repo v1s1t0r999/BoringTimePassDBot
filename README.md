@@ -1,2 +1,1 @@
-# BoringTimePassDBot
-Write it when bored...
+# Write it when bored or you gae!
