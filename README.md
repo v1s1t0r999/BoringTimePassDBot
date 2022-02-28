@@ -1,1 +1,1 @@
-# Write it when bored or you gae!
+# Write it when you're bored or you gae!
