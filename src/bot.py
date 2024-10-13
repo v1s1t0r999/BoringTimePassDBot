@@ -198,6 +198,6 @@ async def on_message(msg):
             say = cmd.replace("rp","")
             await channel.send(say)
         else:
-            await message.channel.send("BOZOOOOOOOO")
+            await msg.channel.send("BOZOOOOOOOO")
 
 client.run(os.getenv("dtk"))
