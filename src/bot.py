@@ -4,7 +4,7 @@ import discord
 import ShitDB
 import asyncio
 from discord.ext import commands, tasks
-from .modules import global_variables as env
+import .global_variables as env
 
 
 
