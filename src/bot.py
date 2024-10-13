@@ -135,6 +135,8 @@
 	
 from discord.ext import commands
 from discord import Intents
+import os
+
 prefix = "?"
 bot = commands.Bot(command_prefix=prefix, intents=Intents.default())
 
