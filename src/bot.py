@@ -13,7 +13,7 @@ class Env:
 		github_repo = os.getenv("repo")
 		github_email = os.getenv("ghemail")
 		github_username = os.getenv("ghusername")
-		intents = Intents.all() # Or whatever you want
+		intents = discord.Intents.all() # Or whatever you want
 		token = os.getenv("dtk") # Don't as how....or gtfo
 
 
