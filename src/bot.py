@@ -4,8 +4,20 @@ import discord
 import ShitDB
 import asyncio
 from discord.ext import commands, tasks
-import __init__ as env
+import os
 
+class Env:
+	def __init__(self):
+		prefix = ["-"] # multiple prefixes?? Eww
+		github_token = os.getenv("gtk") # How-To?: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+		github_repo = os.getenv("repo")
+		github_email = os.getenv("ghemail")
+		github_username = os.getenv("ghusername")
+		intents = Intents.all() # Or whatever you want
+		token = os.getenv("dtk") # Don't as how....or gtfo
+
+
+env = Env()
 
 bot = commands.Bot(command_prefix = env.prefix, intents = env.intents, strip_after_prefix=True)
 
@@ -14,6 +26,7 @@ db = ShitDB.AsyncDB(
 	database_repo = env.github_repo,
 	author = (env.github_username, env.github_email)
 )
+
 
 
 @bot.event
