@@ -132,41 +132,63 @@
 
 # if __name__=="__main__":
 # 	bot.run(env.token)
-	
-from discord.ext import commands
-from discord import Intents
-import os
+##################################################################################################################################################
+# from discord.ext import commands
+# from discord import Intents
+# import os
 
-prefix = "?"
-bot = commands.Bot(command_prefix=prefix, intents=Intents.all())
-
-
-@bot.event
-async def on_ready():
-    print("Everything's all ready to go~")
+# prefix = "?"
+# bot = commands.Bot(command_prefix=prefix, intents=Intents.all())
 
 
 # @bot.event
-# async def on_message(message):
-#     print("The message's content was", message.content)
-#     await bot.process_commands(message)
+# async def on_ready():
+#     print("Everything's all ready to go~")
 
 
-@bot.command()
-async def ping(ctx):
-    '''
-    This text will be shown in the help command
-    '''
-
-    # Get the latency of the bot
-    latency = bot.latency  # Included in the Discord.py library
-    # Send it to the user
-    await ctx.send(latency)
+# # @bot.event
+# # async def on_message(message):
+# #     print("The message's content was", message.content)
+# #     await bot.process_commands(message)
 
 
-@bot.command()
-async def echo(ctx, *, content:str):
-    await ctx.send(content)
+# @bot.command()
+# async def ping(ctx):
+#     '''
+#     This text will be shown in the help command
+#     '''
+
+#     # Get the latency of the bot
+#     latency = bot.latency  # Included in the Discord.py library
+#     # Send it to the user
+#     await ctx.send(latency)
 
 
-bot.run(os.getenv("dtk"))  # Where 'TOKEN' is your bot token
+# @bot.command()
+# async def echo(ctx, *, content:str):
+#     await ctx.send(content)
+
+
+# bot.run(os.getenv("dtk"))  # Where 'TOKEN' is your bot token
+
+
+
+import discord
+import os
+
+prefix="-"
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    print('We have logged in as {0.user}'.format(client))
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content.startswith(f'{prefix}hello'):
+        await message.channel.send('Hello!')
+
+client.run(os.getenv("dtk"))
