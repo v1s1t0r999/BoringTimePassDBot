@@ -182,19 +182,19 @@ dat = []
 
 @client.event
 async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
+	print('We have logged in as {0.user}'.format(client))
 
 @client.event
 async def on_message(msg):
 	cmd = message.content.lower()
-    if msg.author == client.user:
-        return
-    if cmd==f"{prefix}chuck":
+	if msg.author == client.user:
+		return
+	if cmd==f"{prefix}chuck":
 		if msg.guild.id in dat:
 			await channel.send(f"already!!!!")
 		else:
-            dat.append(msg.guild.id)
-            await channel.send(f"Setup! Total: {len(dat)}\n```{'\n'.join(dat)}```")
+			dat.append(msg.guild.id)
+			await channel.send(f"Setup! Total: {len(dat)}\n```{'\n'.join(dat)}```")
 	await message.channel.send("nth")
 
 
