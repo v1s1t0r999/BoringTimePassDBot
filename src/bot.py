@@ -177,7 +177,7 @@ import discord
 import os
 
 prefix="-"
-client = discord.Client()
+client = discord.Client(intents=discord.Intents.all())
 
 @client.event
 async def on_ready():
