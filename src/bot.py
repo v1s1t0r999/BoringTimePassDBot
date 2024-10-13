@@ -187,7 +187,7 @@ async def on_ready():
 async def on_message(msg):
     if msg.author == client.user:
         return
-    if msg.content.lower().startswith(f'{prefix}'):
+    elif msg.content.lower().startswith(f'{prefix}'):
         cmd = msg.content.replace(prefix,"").lower()
         channel = msg.channel
         if cmd=="hello":
