@@ -130,6 +130,6 @@ async def rainbow_task():
 
 
 
-
-bot.run(env.token)
+if __name__=="__main__":
+	bot.run(env.token)
 	
