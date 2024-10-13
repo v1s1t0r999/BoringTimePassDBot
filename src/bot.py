@@ -184,13 +184,21 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 
 @client.event
-async def on_message(message):
-    if message.author == client.user:
+async def on_message(msg):
+    if msg.author == client.user:
         return
 
-    if message.content.startswith(f'{prefix}hello'):
-        await message.channel.send('Hello!')
-	else:
-		await message.channel.send("BOZOOOOOOOO")
+    if msg.content.lower().startswith(f'{prefix}'):
+		cmd = msg.content.replace(prefix,"").lower()
+		channel = msg.channel
+		if cmd=="hello":
+			await channel.send('Hello!')
+		if cmd=="yo":
+			await channel.send("yooooo")
+		if cmd.startswith("rp"):
+			say = cmd.replace("rp","")
+			await channel.send(say)
+		else:
+			await message.channel.send("BOZOOOOOOOO")
 
 client.run(os.getenv("dtk"))
