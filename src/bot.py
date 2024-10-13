@@ -187,18 +187,17 @@ async def on_ready():
 async def on_message(msg):
     if msg.author == client.user:
         return
-
     if msg.content.lower().startswith(f'{prefix}'):
-		cmd = msg.content.replace(prefix,"").lower()
-		channel = msg.channel
-		if cmd=="hello":
-			await channel.send('Hello!')
-		if cmd=="yo":
-			await channel.send("yooooo")
-		if cmd.startswith("rp"):
-			say = cmd.replace("rp","")
-			await channel.send(say)
-		else:
-			await message.channel.send("BOZOOOOOOOO")
+        cmd = msg.content.replace(prefix,"").lower()
+        channel = msg.channel
+        if cmd=="hello":
+            await channel.send('Hello!')
+        if cmd=="yo":
+            await channel.send("yooooo")
+        if cmd.startswith("rp"):
+            say = cmd.replace("rp","")
+            await channel.send(say)
+        else:
+            await message.channel.send("BOZOOOOOOOO")
 
 client.run(os.getenv("dtk"))
