@@ -134,8 +134,9 @@
 # 	bot.run(env.token)
 	
 from discord.ext import commands
+from discord import Intents
 prefix = "?"
-bot = commands.Bot(command_prefix=prefix)
+bot = commands.Bot(command_prefix=prefix, intents=Intents.default())
 
 
 @bot.event
