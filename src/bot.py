@@ -4,8 +4,7 @@ import discord
 import ShitDB
 import asyncio
 from discord.ext import commands, tasks
-from . import global_variables as env
-
+import __init__ as env
 
 
 bot = commands.Bot(command_prefix = env.prefix, intents = env.intents, strip_after_prefix=True)
