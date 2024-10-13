@@ -186,21 +186,16 @@ async def on_ready():
 
 @client.event
 async def on_message(msg):
+	cmd = message.content.lower()
     if msg.author == client.user:
         return
-    elif "chuck" in msg.content.lower():
-		if msg.content.lower()==f"{prefix}chuck":
-			await msg.channel.send("chuck chuck")
-    elif msg.content.lower().startswith(f'{prefix}'):
-        cmd = msg.content.replace(prefix,"").lower()
-        channel = msg.channel
-        if cmd=="hello":
-            await channel.send('Hello!')
-        elif cmd=="chuck":
-            if not msg.guild.id in dat:
-                dat.append(msg.guild.id)
-                await channel.send(f"Setup! Total: {len(dat)}\n```{'\n'.join(dat)}```")
-            else:
-                await channel.send(f"already!!!!")
+    if cmd==f"{prefix}chuck":
+		if msg.guild.id in dat:
+			await channel.send(f"already!!!!")
+		else:
+            dat.append(msg.guild.id)
+            await channel.send(f"Setup! Total: {len(dat)}\n```{'\n'.join(dat)}```")
+	await message.channel.send("nth")
+
 
 client.run(os.getenv("dtk"))
