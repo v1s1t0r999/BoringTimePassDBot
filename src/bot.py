@@ -190,5 +190,7 @@ async def on_message(message):
 
     if message.content.startswith(f'{prefix}hello'):
         await message.channel.send('Hello!')
+	else:
+		await message.channel.send("BOZOOOOOOOO")
 
 client.run(os.getenv("dtk"))
