@@ -8,13 +8,13 @@ import os
 
 class Env:
 	def __init__(self):
-		prefix = ["-"] # multiple prefixes?? Eww
-		github_token = os.getenv("gtk") # How-To?: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
-		github_repo = os.getenv("repo")
-		github_email = os.getenv("ghemail")
-		github_username = os.getenv("ghusername")
-		intents = discord.Intents.all() # Or whatever you want
-		token = os.getenv("dtk") # Don't as how....or gtfo
+		self.prefix = ["-"] # multiple prefixes?? Eww
+		self.github_token = os.getenv("gtk") # How-To?: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+		self.github_repo = os.getenv("repo")
+		self.github_email = os.getenv("ghemail")
+		self.github_username = os.getenv("ghusername")
+		self.intents = discord.Intents.all() # Or whatever you want
+		self.token = os.getenv("dtk") # Don't as how....or gtfo
 
 
 env = Env()
