@@ -98,6 +98,8 @@ async def rainbow(ctx,role:discord.Role=None):
 				return await ctx.send("Nvm!")
 		except asyncio.TimeoutError:
 			return await ctx.send(f"You didnt reply in time stupido!")
+	except:
+		await ctx.send(f"Eh? smth happend!")
 	all_guilds.update({ctx.guild.id:{"roleid":role.id,"name":role.name}})
 	await db.push_remote_data(content=all_guilds, file_path="rainbow.json")
 	await ctx.send(embed=discord.Embed(description=f"{role.mention} is now a Rainbow role. It will change its colour in every 5 minutes!"))
