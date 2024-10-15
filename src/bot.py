@@ -186,6 +186,7 @@ async def on_ready():
 
 @client.event
 async def on_message(msg):
+	message=msg
 	cmd = message.content.lower()
 	if msg.author == client.user:
 		return
