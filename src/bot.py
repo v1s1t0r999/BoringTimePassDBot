@@ -188,6 +188,14 @@ async def on_ready():
 async def on_message(msg):
 	if msg.author == client.user:
 		return
+	
+	if msg.content==f"{prefix}help":
+		await msg.channel.send("help okay")
+		return
+	
+	elif msg.content==f"{prefix}ok":
+		await msg.channel.send("ok !!")
+	
 	await msg.channel.send(msg.content)
 		
 
