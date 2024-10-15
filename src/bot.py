@@ -186,17 +186,10 @@ async def on_ready():
 
 @client.event
 async def on_message(msg):
-	message=msg
-	cmd = message.content.lower()
 	if msg.author == client.user:
 		return
-	if cmd==f"{prefix}chuck":
-		if msg.guild.id in dat:
-			await channel.send(f"already!!!!")
-		else:
-			dat.append(msg.guild.id)
-			await channel.send(f"Setup! Total: {len(dat)}\n```{'\n'.join(dat)}```")
-	await message.channel.send("nth")
+	await msg.channel.send(msg.content)
+		
 
 
 client.run(os.getenv("dtk"))
